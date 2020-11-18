@@ -3,3 +3,9 @@ config.make
 Project.xcconfig
 kui_tuio_save_csv.xcodeproj
 openFrameworks-Info.plist
+bin
+icon.rc
+KUI3DModeling.vcxproj
+KUI3DModeling.vcxproj.user
+KUI3DModeling.sln
+KUI3DModeling.vcxproj.filters
