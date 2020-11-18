@@ -1,4 +1,0 @@
-ofxCsv
-ofxOsc
-ofxSTL
-ofxTuio
