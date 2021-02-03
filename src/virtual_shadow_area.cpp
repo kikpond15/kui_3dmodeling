@@ -11,9 +11,9 @@ VirtualShadow::VirtualShadow(){
     maxDiameter = MAX_DIAMETER;
     minDiameter = MIN_DIAMETER;
     diameter = minDiameter;
-    limitArea1 = ofVec2f(447.282, 209.883);
-    limitArea2 = ofVec2f(1008.16, 716.69);
-    center = ofVec2f(1008.16-447.282, 716.69-209.883);
+    limitArea1 = ofVec2f(MIN_X, MIN_Y);
+    limitArea2 = ofVec2f(MAX_X, MAX_Y);
+    center = ofVec2f(MAX_X - MIN_X, MAX_X - MIN_Y);
     homePos = center;
 }
 //--------------------------------------------------------------

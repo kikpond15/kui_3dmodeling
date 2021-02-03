@@ -8,8 +8,8 @@
 #include "plotter_controller.hpp"
 
 PlotterController::PlotterController(){
-    arduino.setup("/dev/cu.usbmodem142401", 115200);
-    
+    arduino.setup("COM5", 115200);
+	
 }
 //--------------------------------------------------------------
 
@@ -74,8 +74,6 @@ void PlotterController::sendSerial(string str){
 //     ---------------------------------------------------*/
     
 }
-//--------------------------------------------------------------
-
 
 
 

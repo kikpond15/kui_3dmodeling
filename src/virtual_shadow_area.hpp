@@ -12,6 +12,12 @@
 #include <stdio.h>
 #include "ofMain.h"
 
+//windows PC Full screen mode value
+#define MIN_X 585
+#define MIN_Y 214
+#define MAX_X 1341
+#define MAX_Y 898
+
 #define MAX_DIAMETER 600
 #define MIN_DIAMETER 100
 

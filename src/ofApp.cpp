@@ -26,7 +26,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     fingerTipPos = touchPanel.getFingersPos();
-    gestureManager.update2(fingerTipPos);
+    gestureManager.update3(fingerTipPos);
 }
 
 //--------------------------------------------------------------
@@ -35,6 +35,7 @@ void ofApp::draw(){
     if(viewShadowArea){
         gestureManager.drawVirtualShadow();
         gestureManager.drawFingers();
+		ofDrawBitmapString(ofToString(gestureManager.fingerCenter), 100, 100);
     } else if(viewMoveObject){
         cam.begin();
         cam.disableMouseInput();

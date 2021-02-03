@@ -10,31 +10,19 @@
 
 #include <stdio.h>
 #include "ofMain.h"
-#include "ofxTuio.h"
-#include "ofxOsc.h"
+//#include "ofxTuio.h"
+#include "ofxMultitouch.h"
+//#include "ofxOsc.h"
 
 class TouchPanel {
 public:
     TouchPanel();
-    
-    void draw();
     vector<ofVec2f> getFingersPos();
-    vector<ofVec2f> getCursorsPos();
-    
-    void tuioAdded(ofxTuioCursor & tuioCursor);
-    void tuioRemoved(ofxTuioCursor & tuioCursor);
-    void tuioUpdated(ofxTuioCursor & tuioCursor);
-    bool isInJudgArea(ofVec2f p);
-    
-    struct cursor {
-        ofVec2f pos;
-        long sessionID;
-    };
-    vector<cursor> cursors;
+	//void draw();
+	void touchDown(ofTouchEventArgs& touch);
+	void touchMove(ofTouchEventArgs& touch);
+	void touchUp(ofTouchEventArgs& touch);
 
-    ofxTuioReceiver tuio;
-    vector<cursor> fingerTip;
-    vector<cursor> p_fingerTip;
     ofVec2f fingerPos;
     ofVec2f limitArea1, limitArea2;
 };

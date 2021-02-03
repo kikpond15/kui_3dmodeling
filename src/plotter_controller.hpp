@@ -19,8 +19,7 @@ public:
     void update(ofVec2f pos, float dia);
     string convertPos2XY(ofVec2f pos);
     string convertPinch2Z(float dia);
-    
-    
+   
     ofSerial arduino;
     ofPoint maxPos, minPos;
 };
