@@ -27,17 +27,19 @@ public:
     void setVirtualShadowParam(ofVec2f p, float area);
     void drawVirtualShadow();
     void drawFingers();
+	void drawVirtualObject();
     void update(vector<ofVec2f> _fingers);
     void update2(vector<ofVec2f> _fingers);
     void update3(vector<ofVec2f> _fingers);
 	void update4(vector<ofVec2f> _fingers);
-    void shadowPlotterUpdate(vector<ofVec2f> _fingers);
+    //void shadowPlotterUpdate(vector<ofVec2f> _fingers);
     void homing();
     void saveCsv();
     void setSphereObject(ofVec3f p);
     void drawSphereObjects();
     void saveSphereSTL();
 	void oscSender(ofVec3f p);
+	void setVirObjPos(ofVec3f p);
 
     VirtualShadow virtualShadow;
     PlotterController plotterCont;
@@ -49,6 +51,7 @@ public:
     vector<ofVec2f> fingers;
     ofVec2f fingerCenter, pFingerCenter;
     vector<ofIcoSpherePrimitive> spheres;
+	ofIcoSpherePrimitive virtualObject;
     
     float fingDist, pFingDist;
     bool shadowInsideExisted;

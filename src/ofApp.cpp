@@ -26,7 +26,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     fingerTipPos = touchPanel.getFingersPos();
-    gestureManager.update3(fingerTipPos);
+    gestureManager.update4(fingerTipPos);
 }
 
 //--------------------------------------------------------------
@@ -41,7 +41,9 @@ void ofApp::draw(){
         cam.disableMouseInput();
         ofSetColor(255);
         ofDrawRectangle(ofGetWidth()/2, ofGetHeight()/2, 1000,1000);
+		gestureManager.drawVirtualObject();
         gestureManager.drawSphereObjects();
+		
         cam.end();
     }
 }

@@ -8,7 +8,7 @@
 #include "plotter_controller.hpp"
 
 PlotterController::PlotterController(){
-    arduino.setup("COM5", 115200);
+    arduino.setup("COM4", 115200);
 	
 }
 //--------------------------------------------------------------
