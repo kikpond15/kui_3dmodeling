@@ -21,6 +21,9 @@ void ofApp::setup(){
     light.setSpecularColor(ofFloatColor(1.0, 1.0, 1.0));
     light.setAmbientColor(ofFloatColor(0.5, 0.5, 0.5, 1.0));
     light.setPosition(x, y-100, 500);
+
+	planeW = 650;
+	planeH = 534;
 }
 
 //--------------------------------------------------------------
@@ -40,7 +43,7 @@ void ofApp::draw(){
         cam.begin();
         cam.disableMouseInput();
         ofSetColor(255);
-        ofDrawRectangle(ofGetWidth()/2, ofGetHeight()/2, 1000,1000);
+        ofDrawRectangle(ofGetWidth()/2, ofGetHeight()/2, planeW, planeH);
 		gestureManager.drawVirtualObject();
         gestureManager.drawSphereObjects();
 		

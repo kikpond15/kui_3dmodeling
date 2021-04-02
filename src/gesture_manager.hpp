@@ -40,6 +40,7 @@ public:
     void saveSphereSTL();
 	void oscSender(ofVec3f p);
 	void setVirObjPos(ofVec3f p);
+	vector<ofVec2f> mapingFingerPos(vector<ofVec2f> fingPos);
 
     VirtualShadow virtualShadow;
     PlotterController plotterCont;
@@ -49,7 +50,7 @@ public:
 	ofxOscSender sender;
 
     vector<ofVec2f> fingers;
-    ofVec2f fingerCenter, pFingerCenter;
+    ofVec2f fingerCenter, pFingerCenter, effectiveMaxArea, effectiveMinArea;
     vector<ofIcoSpherePrimitive> spheres;
 	ofIcoSpherePrimitive virtualObject;
     

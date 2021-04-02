@@ -10,6 +10,9 @@ GestureManager::GestureManager() {
 	fingDist = 0;
 	pFingDist = 0;
 	shadowInsideExisted = false;
+	//操作の有効範囲(マーカー上4端のタッチ座標)
+	effectiveMaxArea = ofVec2f();
+	effectiveMinArea = ofVec2f();
 	ofPoint minP = ofPoint(virtualShadow.limitArea1.x, virtualShadow.limitArea1.y, virtualShadow.minDiameter);
 	ofPoint maxP = ofPoint(virtualShadow.limitArea2.x, virtualShadow.limitArea2.y, virtualShadow.maxDiameter);
 	plotterCont.setLimitPos(minP, maxP);
@@ -305,6 +308,8 @@ void GestureManager::update4(vector<ofVec2f> _fingers) {
 					csvManager.recoding(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter);
 					setVirObjPos(ofVec3f(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter));
 					setSphereObject(ofVec3f(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter));
+					//AR view
+					oscSender(ofVec3f(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter));
 				}
 				shadowInsideExisted = true;
 			}
@@ -324,6 +329,8 @@ void GestureManager::update4(vector<ofVec2f> _fingers) {
 					csvManager.recoding(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter);
 					setVirObjPos(ofVec3f(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter));
 					setSphereObject(ofVec3f(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter));
+					//AR view
+					oscSender(ofVec3f(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter));
 				}
 				shadowInsideExisted = true;
 			}
@@ -345,7 +352,6 @@ void GestureManager::update4(vector<ofVec2f> _fingers) {
 		}
 		timer.stop();
 		cout << "Play and Recoding gesture" << endl;
-
 	}
 	else {    //操作がない時または，操作終了時
 		setVirObjPos(ofVec3f(virtualShadow.center.x, virtualShadow.center.y, virtualShadow.diameter));
@@ -488,3 +494,7 @@ void GestureManager::homing() {
 }
 //--------------------------------------------------------------
 
+vector<ofVec2f> GestureManager::mapingFingerPos(vector<ofVec2f> fingPos) {
+
+	return fingPos;
+}

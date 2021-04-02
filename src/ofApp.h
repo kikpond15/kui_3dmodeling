@@ -22,6 +22,6 @@ class ofApp : public ofBaseApp{
     
     ofEasyCam cam;
     ofLight light;
-    float x, y;
+    float x, y, planeW, planeH;
     
 };
