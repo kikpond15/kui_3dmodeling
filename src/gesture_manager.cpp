@@ -5,6 +5,7 @@
 //  Created by 菊池康太 on 2020/03/03.
 //
 
+
 #include "gesture_manager.hpp"
 GestureManager::GestureManager() {
 	fingDist = 0;
